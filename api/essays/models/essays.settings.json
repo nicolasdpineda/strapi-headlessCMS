@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "essays",
+  "info": {
+    "name": "Essays"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "month": {
+      "type": "enumeration",
+      "enum": [
+        "February",
+        "July",
+        "September"
+      ]
+    },
+    "year": {
+      "type": "integer"
+    },
+    "subjects": {
+      "collection": "subjects",
+      "via": "essays",
+      "dominant": true
+    }
+  }
+}
