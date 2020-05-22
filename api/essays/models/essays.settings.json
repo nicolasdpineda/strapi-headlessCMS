@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "essays",
   "info": {
-    "name": "Essays"
+    "name": "Essay"
   },
   "options": {
     "increments": true,
