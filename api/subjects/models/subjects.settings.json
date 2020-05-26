@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "subjects",
   "info": {
-    "name": "Subject"
+    "name": "Subjects"
   },
   "options": {
     "increments": true,
@@ -16,8 +16,8 @@
       "type": "string"
     },
     "essays": {
-      "via": "subjects",
-      "collection": "essays"
+      "collection": "essays",
+      "via": "subjects"
     }
   }
 }

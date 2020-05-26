@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "essays",
   "info": {
-    "name": "Essay"
+    "name": "Essays"
   },
   "options": {
     "increments": true,
@@ -27,8 +27,8 @@
       "type": "integer"
     },
     "subjects": {
-      "collection": "subjects",
       "via": "essays",
+      "collection": "subjects",
       "dominant": true
     }
   }
