@@ -1,19 +1,19 @@
 {
   "kind": "collectionType",
-  "collectionName": "essays",
+  "collectionName": "answers",
   "info": {
-    "name": "Essay"
+    "name": "Answer"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "question": {
+    "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
+    "year": {
+      "type": "integer"
     },
     "month": {
       "type": "enumeration",
@@ -23,17 +23,12 @@
         "September"
       ]
     },
-    "year": {
-      "type": "integer"
+    "essay": {
+      "model": "essays",
+      "via": "answer"
     },
-    "subjects": {
-      "collection": "subjects",
-      "via": "essays",
-      "dominant": true
-    },
-    "answer": {
-      "via": "essay",
-      "model": "answer"
+    "content": {
+      "type": "richtext"
     }
   }
 }

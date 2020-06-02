@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/essays": {
+    "/answers": {
       "get": {
         "deprecated": false,
-        "description": "Find all the essays's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve essays document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Essays"
+                    "$ref": "#/components/schemas/Answer"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new essays record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve essays document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Essays"
+                  "$ref": "#/components/schemas/Answer"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEssays"
+                "$ref": "#/components/schemas/NewAnswer"
               }
             }
           }
         }
       }
     },
-    "/essays/count": {
+    "/answers/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of essays documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve essays document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "parameters": []
       }
     },
-    "/essays/{id}": {
+    "/answers/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one essays record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve essays document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Essays"
+                  "$ref": "#/components/schemas/Answer"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single essays record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve essays document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Essays"
+                  "$ref": "#/components/schemas/Answer"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewEssays"
+                "$ref": "#/components/schemas/NewAnswer"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single essays record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single essays based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Essays"
+          "Answer"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Essays": {
+      "Answer": {
         "required": [
           "id"
         ],
@@ -522,11 +522,11 @@
           "id": {
             "type": "string"
           },
-          "question": {
+          "title": {
             "type": "string"
           },
-          "content": {
-            "type": "string"
+          "year": {
+            "type": "integer"
           },
           "month": {
             "type": "string",
@@ -536,35 +536,7 @@
               "September"
             ]
           },
-          "year": {
-            "type": "integer"
-          },
-          "subjects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "essays": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "answer": {
+          "essay": {
             "required": [
               "id"
             ],
@@ -572,32 +544,41 @@
               "id": {
                 "type": "string"
               },
-              "title": {
+              "question": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "month": {
                 "type": "string"
               },
               "year": {
                 "type": "integer"
               },
-              "month": {
-                "type": "string"
+              "subjects": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "essay": {
-                "type": "string"
-              },
-              "content": {
+              "answer": {
                 "type": "string"
               }
             }
-          }
-        }
-      },
-      "NewEssays": {
-        "properties": {
-          "question": {
-            "type": "string"
           },
           "content": {
             "type": "string"
+          }
+        }
+      },
+      "NewAnswer": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
           },
           "month": {
             "type": "string",
@@ -607,16 +588,10 @@
               "September"
             ]
           },
-          "year": {
-            "type": "integer"
+          "essay": {
+            "type": "string"
           },
-          "subjects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "answer": {
+          "content": {
             "type": "string"
           }
         }
@@ -625,7 +600,7 @@
   },
   "tags": [
     {
-      "name": "Essays"
+      "name": "Answer"
     }
   ]
 }

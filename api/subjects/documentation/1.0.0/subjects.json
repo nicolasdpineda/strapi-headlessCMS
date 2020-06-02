@@ -555,6 +555,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "answer": {
+                  "type": "string"
                 }
               }
             }

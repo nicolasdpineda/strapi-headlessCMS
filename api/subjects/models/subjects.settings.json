@@ -16,8 +16,8 @@
       "type": "string"
     },
     "essays": {
-      "collection": "essays",
-      "via": "subjects"
+      "via": "subjects",
+      "collection": "essays"
     }
   }
 }
