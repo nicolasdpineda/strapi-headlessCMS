@@ -10,11 +10,9 @@ module.exports = ({ env }) => ({
         database: env("DATABASE_NAME", "possue-local"),
         username: env("DATABASE_USERNAME", "postgres"),
         password: env("DATABASE_PASSWORD", "Accusync70"),
-        ssl: env.bool("DATABASE_SSL", false),
+        ssl: env.bool("sslmode=require", false),
       },
-      options: {
-        ssl: true,
-      },
+      options: {},
     },
   },
 });
